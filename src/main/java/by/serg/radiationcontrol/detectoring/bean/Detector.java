@@ -1,23 +1,25 @@
 package by.serg.radiationcontrol.detectoring.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Timestamp;
+import javax.persistence.Table;
+import java.util.Date;
 
-@Data
-@Builder
+
 @Entity
+@Table(name = "DETECTORS")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Detector {
     @Id
-    private Long id;
     private String location;
     private Double activity;
-    @UpdateTimestamp
-    private Timestamp dateTime;
+    @DateTimeFormat
+    private Date dateTime;
 
-    public Detector() {
-    }
 }
