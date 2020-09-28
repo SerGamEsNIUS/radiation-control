@@ -11,7 +11,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "DETECTORS")
+@Table(name = "detectors")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
